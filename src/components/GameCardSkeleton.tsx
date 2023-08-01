@@ -9,6 +9,7 @@ import getCroppedImageUrl from "../services/image-url.ts";
 const GameCardSkeleton = () => {
     return (
         <Card>
+            <Image src={getCroppedImageUrl(null)}/>
             <Skeleton height='200px'/>
             <CardBody>
                 <SkeletonText/>
