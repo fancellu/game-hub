@@ -1,9 +1,10 @@
 import {useEffect, useState} from "react";
 import apiClient from "../services/api-client.ts";
 
-interface Game {
+export interface Game {
     id: number,
-    name: string
+    name: string,
+    background_image: string;
 }
 
 interface FetchGamesResponse {
@@ -14,7 +15,7 @@ interface FetchGamesResponse {
 const useGames = () => {
     const [games, setGames] = useState<Game[]>([])
     const [error, setError] = useState('')
-    
+
     useEffect(() => {
         const controller = new AbortController()
         apiClient.get<FetchGamesResponse>('/games', {signal: controller.signal})
