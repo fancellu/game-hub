@@ -1,5 +1,7 @@
 import {useEffect, useState} from "react";
 import apiClient from "../services/api-client.ts";
+import useData from "./useData.ts";
+import {Genre} from "./useGenres.ts";
 
 export interface Platform {
     id: number,
@@ -15,37 +17,5 @@ export interface Game {
     metacritic: number
 }
 
-interface FetchGamesResponse {
-    count: number;
-    results: Game[]
-}
-
-const useGames = () => {
-    const [games, setGames] = useState<Game[]>([])
-    const [error, setError] = useState('')
-    const [isLoading, setLoading] = useState(false)
-
-    useEffect(() => {
-        const controller = new AbortController()
-        setLoading(true)
-        apiClient.get<FetchGamesResponse>('/games', {signal: controller.signal})
-            .then(res => {
-                setGames(res.data.results)
-                setLoading(false)
-            })
-            .catch(err => {
-                if (err.message === "canceled") return
-                setError(err.message)
-                setLoading(false)
-            })
-        return () => {
-            controller.abort()
-        }
-    }, [])
-
-    return {
-        games, error, isLoading
-    }
-}
-
+const useGames = () => useData<Game>('/games')
 export default useGames
