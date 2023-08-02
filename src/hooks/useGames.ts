@@ -1,5 +1,3 @@
-import {useEffect, useState} from "react";
-import apiClient from "../services/api-client.ts";
 import useData from "./useData.ts";
 import {Genre} from "./useGenres.ts";
 
