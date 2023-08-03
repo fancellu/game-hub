@@ -4,7 +4,8 @@ import {GameQuery} from "../App.tsx";
 export interface Platform {
     id: number,
     name: string,
-    slug: string
+    slug: string,
+
 }
 
 export interface Game {
