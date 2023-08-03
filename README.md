@@ -19,3 +19,7 @@ This will build for production, inside the ```dist``` dir
 If you need it to run on a subdirectory, not the root, use
 
 ```vite build --base=/subdir1/subdir2```
+
+## Live demo
+
+https://felstar.com/demo/gamehub/
