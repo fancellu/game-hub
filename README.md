@@ -1,27 +1,21 @@
-# React + TypeScript + Vite
+# GameHub: React + Chakra UI Game Browser
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This pulls game data from https://rawg.io/ and presents using https://chakra-ui.com/
 
-Currently, two official plugins are available:
+## NPM
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Locally
 
-## Expanding the ESLint configuration
+'npm run dev' to run locally
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+This will spin up a local web server on localhost
 
-- Configure the top-level `parserOptions` property like this:
+### Build
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+```vite build``` to build for production
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+This will build for production, inside the ```dist``` dir
+
+If you need it to run on a subdirectory, not the root, use
+
+```vite build --base=/subdir1/subdir2```
