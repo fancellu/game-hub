@@ -3,8 +3,6 @@ import useGames from "../hooks/useGames";
 import GameCard from "./GameCard.tsx";
 import GameCardSkeleton from "./GameCardSkeleton.tsx";
 import GameCardContainer from "./GameCardContainer.tsx";
-import {Genre} from "../hooks/useGenres.ts";
-import {Platform} from "../hooks/usePlatforms.ts";
 import {GameQuery} from "../App.tsx";
 
 interface Props {
