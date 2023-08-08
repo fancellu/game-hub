@@ -1,3 +1,6 @@
+import {useQuery} from "@tanstack/react-query";
+import apiClient from "../services/api-client.ts";
+import {FetchResponse} from "./useData.ts";
 import genres from "../data/genres.ts";
 
 export interface Genre {
@@ -6,12 +9,13 @@ export interface Genre {
     image_background: string
 }
 
-
-// We now pull genres from local json, as it hardly ever changes, 1 less network access
-const useGenres = () => ({
-    data: genres,
-    isLoading: false,
-    error: null
-})
+const useGenres = () => {
+    return useQuery<FetchResponse<Genre>, Error>({
+        queryKey: ['genres'],
+        queryFn: () => apiClient.get('/genres').then(res => res.data),
+        staleTime: 60_000 * 60 * 24,
+        initialData: {count: genres.length, results: genres}
+    })
+}
 
 export default useGenres;

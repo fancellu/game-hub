@@ -13,11 +13,14 @@ const GenreList = ({onSelectGenre, selectedGenre}: Props) => {
 
     if (error) return null;
     if (isLoading) return <Spinner/>
+
+    console.log(data)
+
     return (
         <>
             <Heading fontSize='2xl' marginBottom={3}>Genres</Heading>
             <List>
-                {data.map(gen => <ListItem key={gen.id} paddingY='5px'>
+                {data.results.map(gen => <ListItem key={gen.id} paddingY='5px'>
                     <HStack alignContent='space-between'>
                         <Image boxSize='32px' borderRadius={8} src={getCroppedImageUrl(gen.image_background)}
                                objectFit='cover'/>
