@@ -14,8 +14,6 @@ const GenreList = ({onSelectGenre, selectedGenre}: Props) => {
     if (error) return null;
     if (isLoading) return <Spinner/>
 
-    console.log(data)
-
     return (
         <>
             <Heading fontSize='2xl' marginBottom={3}>Genres</Heading>

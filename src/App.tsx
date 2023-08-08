@@ -35,7 +35,6 @@ function App() {
             onSearch={(searchText) => setGameQuery({...gameQuery, searchText: searchText})}/></GridItem>
         <Show above="lg">
             <GridItem area='aside' paddingX={5}><GenreList selectedGenre={gameQuery.genre} onSelectGenre={(genre) => {
-                console.log(genre);
                 setGameQuery({...gameQuery, genre: genre})
             }}/></GridItem>
         </Show>
@@ -46,7 +45,10 @@ function App() {
                     <PlatformSelector selectedPlatform={gameQuery.platform}
                                       onSelectPlatform={(plat) => setGameQuery({...gameQuery, platform: plat})}/>
                     <SortSelector sortOrder={gameQuery.sortOrder}
-                                  onSelectSortOrder={(sortOrder) => setGameQuery({...gameQuery, sortOrder: sortOrder})}/>
+                                  onSelectSortOrder={(sortOrder) => setGameQuery({
+                                      ...gameQuery,
+                                      sortOrder: sortOrder
+                                  })}/>
                 </HStack>
             </Box>
             <GameGrid gameQuery={gameQuery}/></GridItem>
