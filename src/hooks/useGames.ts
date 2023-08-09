@@ -1,5 +1,5 @@
 import {GameQuery} from "../App.tsx";
-import {useInfiniteQuery, useQuery} from "@tanstack/react-query";
+import {useInfiniteQuery} from "@tanstack/react-query";
 import {Platform} from "./usePlatforms.ts";
 import ApiClient, {FetchResponse} from "../services/api-client.ts";
 
