@@ -1,10 +1,10 @@
-import {createBrowserRouter} from "react-router-dom";
+import {createBrowserRouter, createHashRouter} from "react-router-dom";
 import Layout from "./pages/Layout.tsx";
 import ErrorPage from "./pages/ErrorPage.tsx";
 import GameDetailPage from "./pages/GameDetailPage.tsx";
 import HomePage from "./pages/HomePage.tsx";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
     {
         path: '/',
         element: <Layout/>,
@@ -14,16 +14,6 @@ const router = createBrowserRouter([
             {path: 'games/:slug', element: <GameDetailPage/>},
         ]
     },
-    // {
-    //     element: <PrivateRoutes/>,
-    //     children: [
-    //         {
-    //             path: 'users', element: <UsersPage/>, children: [
-    //                 {path: ':id', element: <UserDetail/>}
-    //             ]
-    //         }
-    //     ]
-    // }
 ])
 
 export default router
