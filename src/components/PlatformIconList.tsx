@@ -4,7 +4,8 @@ import {SiNintendo} from "react-icons/si";
 import {BsGlobe} from "react-icons/bs";
 import {HStack, Icon} from "@chakra-ui/react";
 import {IconType} from "react-icons";
-import {Platform} from "../hooks/usePlatforms.ts";
+
+import {Platform} from "../entities/Platform.ts";
 
 interface Props {
     platforms: Platform[]
