@@ -6,6 +6,7 @@ const ErrorPage = () => {
     const err = useRouteError() as unknown;
     const isErrorResponse = isRouteErrorResponse(err)
 
+    console.error(err)
     return (
         <>
             <NavBar/>
