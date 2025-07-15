@@ -123,17 +123,21 @@ sequenceDiagram
     participant App as "Running App"
     participant API as "RAWG API"
 
-    Dev->>Editor: Writes `const gameName = myGame.title;`
-    Note over Editor: The `Game` interface has no 'title'. It has 'name'.
+    Dev->>Editor: Writes const gameName = myGame.title;
+
+    Note over Editor: The Game interface has no 'title'. It has 'name'.
+
     Editor-->>Dev: ERROR! Property 'title' does not exist on 'Game'.
-    
-    Dev->>Editor: Corrects code to `const gameName = myGame.name;`
+
+    Dev->>Editor: Corrects code to const gameName = myGame.name;
     Editor-->>Dev: Looks good! Code is valid.
-    
+
     App->>API: (Later) Fetches data for a game.
-    API-->>App: Sends data: `{ "name": "...", ... }`
-    App->>App: Executes `const gameName = myGame.name;`
+    API-->>App: Sends data: { name: ..., ... }
+    App->>App: Executes const gameName = myGame.name;
+
     Note over App: This works perfectly. No crash!
+
 ```
 
 By defining the shape of our data upfront, we create a contract between the API and our code. TypeScript enforces this contract, making our application more robust, predictable, and easier for teams to work on.
