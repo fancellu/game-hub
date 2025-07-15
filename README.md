@@ -2,6 +2,11 @@
 
 This pulls game data from https://rawg.io/ and presents using https://chakra-ui.com/
 
+## Tutorial
+
+[Tutorial](tutorial/index.md)
+
+
 ## NPM
 
 ### Locally
