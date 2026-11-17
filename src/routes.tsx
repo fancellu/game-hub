@@ -1,4 +1,4 @@
-import {createBrowserRouter, createHashRouter} from "react-router-dom";
+import {createHashRouter} from "react-router-dom";
 import Layout from "./pages/Layout.tsx";
 import ErrorPage from "./pages/ErrorPage.tsx";
 import GameDetailPage from "./pages/GameDetailPage.tsx";

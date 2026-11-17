@@ -4,7 +4,7 @@ export interface GameQuery {
     genreId?: number;
     platformId?: number;
     sortOrder?: string;
-    searchText?: String;
+    searchText?: string;
 }
 
 interface GameQueryStore {

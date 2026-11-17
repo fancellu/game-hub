@@ -4,7 +4,7 @@ import PlatformIconList from "./PlatformIconList.tsx";
 import CriticScore from "./CriticScore.tsx";
 import getCroppedImageUrl from "../services/image-url.ts";
 import Emoji from "./Emoji.tsx";
-import {Link, useNavigate} from "react-router-dom";
+import {Link} from "react-router-dom";
 import {Game} from "../entities/Game.ts";
 
 interface Props {
@@ -12,7 +12,6 @@ interface Props {
 }
 
 const GameCard = ({game}: Props) => {
-    const navigate = useNavigate()
     return (
         <Card>
             <Image src={getCroppedImageUrl(game.background_image)}/>
