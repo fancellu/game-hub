@@ -81,13 +81,13 @@ import axios from "axios";
 const axiosInstance = axios.create({
     baseURL: 'https://api.rawg.io/api',
     params: {
-        key: 'f4ef000bfe6749038685cc5a314359e1'
+        key: import.meta.env.RAWG_API_KEY
     }
 })
 ```
 
 *   `baseURL`: This is the address of the RAWG API "library." Every request we make will start with this URL.
-*   `params: { key: ... }`: This is our secret API key. It's like a library card that proves we have permission to access the data. `axios` will automatically attach this to every request.
+*   `params: { key: ... }`: This is our API key. It's like a library card that proves we have permission to access the data. `axios` will automatically attach this to every request. The key is read from the `RAWG_API_KEY` environment variable (set in a local `.env` file), so it isn't written into the source code.
 
 Next is the `ApiClient` class itself, a reusable blueprint.
 
