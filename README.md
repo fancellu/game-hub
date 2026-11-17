@@ -9,6 +9,7 @@ Browse, search and filter thousands of video games, using data from the [RAWG Vi
 ## Features
 
 - **Infinite scrolling** game grid with cover art, platform icons, Metacritic score and a rating emoji
+- Opens on **New & trending**: games released in the last 12 months, most popular first
 - **Filter** by genre and platform, **sort** by relevance, date added, name, release date, popularity or average rating
 - **Search** games by name
 - **Game detail page** with an expandable description, platforms, genres, publishers, a trailer (when available) and screenshots
