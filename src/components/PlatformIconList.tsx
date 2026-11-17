@@ -25,7 +25,8 @@ const PlatformIconList = ({platforms}: Props) => {
 
     return (
         <HStack marginY={1}>
-            {platforms.map((platform) => (
+            {/* Skip platforms without an icon (e.g. atari, sega): Chakra 3's Icon throws on an undefined `as` */}
+            {platforms.filter(platform => iconMap[platform.slug]).map((platform) => (
                 <Icon key={platform.id} as={iconMap[platform.slug]} color='gray.500'/>
             ))}
         </HStack>
