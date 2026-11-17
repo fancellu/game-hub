@@ -2,7 +2,7 @@
 
 Browse, search and filter thousands of video games, using data from the [RAWG Video Games Database API](https://rawg.io/apidocs) and a UI built with [Chakra UI](https://chakra-ui.com/).
 
-**Live demo:** <https://felstar.com/demo/gamehub/>
+**Live demo:** <https://game-hub-delta-three-37.vercel.app>
 
 ![Home page: genre sidebar, platform and sort filters, and a grid of game cards](docs/screenshots/home.png)
 
@@ -64,7 +64,18 @@ RAWG_API_KEY=your-rawg-api-key
 | `npm run preview` | Serve the production build locally |
 | `npm run lint` | Lint with Oxlint (fails on warnings) |
 
-### Deploying under a subdirectory
+## Deploying
+
+### Vercel
+
+The live demo runs on [Vercel](https://vercel.com/), which detects Vite automatically (build command `npm run build`, output directory `dist`). The only setup is the API key:
+
+1. In the project, go to **Settings → Environment Variables** and add `RAWG_API_KEY` for Production and Preview.
+2. Redeploy, because variables are read at build time.
+
+Every push to `main` then deploys automatically.
+
+### Under a subdirectory
 
 To serve the app from a path other than the site root, set Vite's base path:
 
