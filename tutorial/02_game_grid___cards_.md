@@ -50,9 +50,9 @@ The `GameCard` is a straightforward component. It receives a `game` object, whic
 
 const GameCard = ({game}: Props) => {
     return (
-        <Card>
+        <Card.Root variant='elevated'>
             <Image src={getCroppedImageUrl(game.background_image)}/>
-            <CardBody>
+            <Card.Body>
                 {/* We show platform icons and the game's score here */}
                 <HStack justifyContent='space-between' marginBottom={3}>
                     <PlatformIconList platforms={...}/>
@@ -62,8 +62,8 @@ const GameCard = ({game}: Props) => {
                 <Heading fontSize='2xl'>
                     <Link to={'/games/' + game.slug}>{game.name}</Link>
                 </Heading>
-            </CardBody>
-        </Card>
+            </Card.Body>
+        </Card.Root>
     );
 };
 ```

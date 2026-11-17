@@ -1,6 +1,6 @@
 # GameHub: React + Chakra UI Game Browser
 
-Browse, search and filter thousands of video games, using data from the [RAWG Video Games Database API](https://rawg.io/apidocs) and a UI built with [Chakra UI](https://v2.chakra-ui.com/).
+Browse, search and filter thousands of video games, using data from the [RAWG Video Games Database API](https://rawg.io/apidocs) and a UI built with [Chakra UI](https://chakra-ui.com/).
 
 **Live demo:** <https://felstar.com/demo/gamehub/>
 
@@ -23,7 +23,7 @@ Browse, search and filter thousands of video games, using data from the [RAWG Vi
 | Area | Library |
 | --- | --- |
 | UI framework | [React 19](https://react.dev/) + [TypeScript 7](https://www.typescriptlang.org/) |
-| Components & theming | [Chakra UI 2](https://v2.chakra-ui.com/) |
+| Components & theming | [Chakra UI 3](https://chakra-ui.com/) |
 | Data fetching & caching | [TanStack Query 5](https://tanstack.com/query) + [axios](https://axios-http.com/) |
 | Global state | [Zustand 5](https://zustand.docs.pmnd.rs/) |
 | Routing | [React Router 7](https://reactrouter.com/) (hash routing) |
@@ -78,6 +78,7 @@ The app uses hash routing (`/#/games/...`), so no server rewrite rules are neede
 ```text
 src/
   components/   UI components (game grid, cards, selectors, navbar...)
+    ui/         Chakra CLI snippets: Provider and color mode (next-themes)
   pages/        Route pages: Layout, HomePage, GameDetailPage, ErrorPage
   hooks/        React Query hooks: useGames, useGame, useGenres, usePlatforms...
   services/     axios API client and image URL helper
@@ -85,7 +86,7 @@ src/
   data/         Bundled genre and platform lists (initial query data)
   store.ts      Zustand store for the current search, filters and sort order
   routes.tsx    Route definitions
-  theme.ts      Chakra theme (dark mode, custom gray palette)
+  theme.ts      Chakra system (createSystem: custom gray palette, v2-style tokens)
 ```
 
 ## Tutorial

@@ -1,4 +1,4 @@
-import {Button, Menu, MenuButton, MenuItem, MenuList} from "@chakra-ui/react";
+import {Button, Menu, Portal} from "@chakra-ui/react";
 import {BsChevronDown} from "react-icons/bs";
 import useGameQueryStore from "../store.ts";
 
@@ -19,16 +19,22 @@ const SortSelector = () => {
     const currentSortOrder = sortOrders.find(order => order.value === sortOrder);
 
     return (
-        <Menu>
-            <MenuButton as={Button} rightIcon={<BsChevronDown/>}>Order
-                by: {currentSortOrder?.label || 'Relevance'}</MenuButton>
-            <MenuList>
-                {sortOrders.map(order => <MenuItem onClick={() => setSortOrder(order.value)} key={order.value}
-                                                   value={order.value}>
-                    {order.label}
-                </MenuItem>)}
-            </MenuList>
-        </Menu>
+        <Menu.Root>
+            <Menu.Trigger asChild>
+                <Button variant='subtle'>Order by: {currentSortOrder?.label || 'Relevance'} <BsChevronDown/></Button>
+            </Menu.Trigger>
+            <Portal>
+                <Menu.Positioner>
+                    <Menu.Content>
+                        {sortOrders.map(order =>
+                            <Menu.Item key={order.value} value={order.value || 'relevance'}
+                                       onSelect={() => setSortOrder(order.value)}>
+                                {order.label}
+                            </Menu.Item>)}
+                    </Menu.Content>
+                </Menu.Positioner>
+            </Portal>
+        </Menu.Root>
     );
 };
 

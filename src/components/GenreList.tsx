@@ -1,6 +1,5 @@
-import React from 'react';
 import useGenres from "../hooks/useGenres.ts";
-import {Button, Heading, HStack, Image, List, ListItem, Spinner} from "@chakra-ui/react";
+import {Button, Heading, HStack, Image, List, Spinner} from "@chakra-ui/react";
 import getCroppedImageUrl from "../services/image-url.ts";
 import useGameQueryStore from "../store.ts";
 
@@ -14,17 +13,18 @@ const GenreList = () => {
     return (
         <>
             <Heading fontSize='2xl' marginBottom={3}>Genres</Heading>
-            <List>
-                {data.results.map(gen => <ListItem key={gen.id} paddingY='5px'>
+            <List.Root variant='plain'>
+                {data.results.map(gen => <List.Item key={gen.id} paddingY='5px'>
                     <HStack alignContent='space-between'>
                         <Image boxSize='32px' borderRadius={8} src={getCroppedImageUrl(gen.image_background)}
                                objectFit='cover'/>
-                        <Button textAlign='left' whiteSpace='normal'
+                        <Button textAlign='left' whiteSpace='normal' height='auto' paddingX={0} flexShrink={1}
                                 fontWeight={gen.id === genreId ? 'bold' : 'normal'}
                                 onClick={() => setGenreId(gen.id)}
-                                fontSize='lg' variant='link'>{gen.name}</Button>
-                    </HStack></ListItem>)}
-            </List>
+                                fontSize='lg' variant='plain'
+                                _hover={{textDecoration: 'underline'}}>{gen.name}</Button>
+                    </HStack></List.Item>)}
+            </List.Root>
         </>
     );
 };
